@@ -268,6 +268,14 @@ void main() {
   final mutiplyNumber = multiply(12, 3);
   print(mutiplyNumber);
   // print(multiply(2, 3));
+  final multiplyMe = (int a, int b) {
+    return a * b;
+  };
+  print(multiplyMe(1, 2));
+
+  final triple = applyMultiplier(3);
+  print(triple(6));
+  print(triple(14.0));
 }
 
 String compliment(int number) {
@@ -289,3 +297,9 @@ bool withinTolerance(int value, [int min = 0, int max = 10]) {
 Function multiply = (int a, int b) {
   return a * b;
 };
+
+Function applyMultiplier(num multiplier) {
+  return (num value) {
+    return value * multiplier;
+  };
+}
