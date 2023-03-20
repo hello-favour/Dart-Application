@@ -276,6 +276,17 @@ void main() {
   final triple = applyMultiplier(3);
   print(triple(6));
   print(triple(14.0));
+
+  const studentNumbers = [1, 2, 3];
+  studentNumbers.forEach((element) {
+    final triple = element * 3;
+    print(triple);
+  });
+
+  print(counter1());
+  print(counter2());
+
+  print(counter);
 }
 
 String compliment(int number) {
@@ -297,9 +308,31 @@ bool withinTolerance(int value, [int min = 0, int max = 10]) {
 Function multiply = (int a, int b) {
   return a * b;
 };
-
+//arrow synthax
 Function applyMultiplier(num multiplier) {
-  return (num value) {
-    return value * multiplier;
-  };
+  return (num value) => value * multiplier;
+}
+
+Function countingFunction() {
+  var counter = 0;
+  final incrementCounter = () => counter += 1;
+  counter;
+  return incrementCounter;
+}
+
+final counter1 = countingFunction();
+final counter2 = countingFunction();
+
+isPrime(int checkNumber) {
+  return checkNumber;
+}
+
+var counter = 0;
+final incrementCounter = () {
+  counter += 2;
+};
+
+class User {
+  String? name;
+  int? age;
 }
